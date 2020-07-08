@@ -1,0 +1,3 @@
+name: exp-python-course
+dependencies:
+- python=3.7
