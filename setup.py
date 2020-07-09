@@ -7,7 +7,7 @@ def read(fname):
 
 
 setup(
-    name="just_a_name",
+    name="src",
 
     description="A short description of the project.",
 
