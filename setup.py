@@ -7,7 +7,7 @@ def read(fname):
 
 
 setup(
-    name="just_a_name",
+    name="exp-python-course",
 
     description="A short description of the project.",
 
