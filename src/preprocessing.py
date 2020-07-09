@@ -8,7 +8,8 @@ def importFile(file):
 def columnSelection(df=None, columnsToKeep=None):
     # Selects the relevant columns for this project
     # df = dataframe
-    # columnsToKeep = list containing column names
+    # columnsToKeep = list containing column names, for example:
+    # columnsToKeep = ['brand','gearbox','powerPS','kilometer','fuelType','model','notRepairedDamage']
 
     # Pre-selection
     sizeBefore = df.shape[0]
