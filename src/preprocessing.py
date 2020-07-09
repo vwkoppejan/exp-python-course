@@ -22,3 +22,17 @@ def columnSelection(df=None, columnsToKeep=None):
     df = df.loc[:, columnsToKeep]  
 
     return df
+
+
+def splitData(df, test_size=0.3)
+    # Splits dataset randomly into a train set and a test set.
+     from sklearn.model_selection import train_test_split
+    
+    # Split dataframe into X and y
+    X = df.drop(['price'], axis=1)
+    y = df.loc[:,'price']
+
+    # Split into train and test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size, random_state=42)
+
+     return X_train, X_test, y_train, y_test

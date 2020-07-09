@@ -10,5 +10,8 @@ file = '../data/autos.csv'
 data = preprocessing.importFile(file)
 
 # Select relevant columns
-columnsToKeep = ['brand','gearbox','powerPS','kilometer','fuelType','model','notRepairedDamage']
+columnsToKeep = ['price','brand','gearbox','powerPS','kilometer','fuelType','model','notRepairedDamage']
 data = preprocessing.columnSelection(data, columnsToKeep)
+
+# Split dataset
+X_train, X_test, y_train, y_test = preprocessing.splitData(data, 0.8)
