@@ -10,6 +10,8 @@ import pandas as pd
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
 
 class ColumnExtractor(BaseEstimator, TransformerMixin):
@@ -29,10 +31,9 @@ class ColumnExtractor(BaseEstimator, TransformerMixin):
 
 
 #%%
-from sklearn.preprocessing import StandardScaler
 
 def NumTransPipeline(numcolumns=[]):
-    nt_pipeline = Pipeline(steps=[
+    nt_pipeline = PipeLine(steps=[
         ("column_select", ColumnExtractor(numcolumns)),
         ("impute", SimpleImputer(strategy="mean")),
         ("scale", StandardScaler())
