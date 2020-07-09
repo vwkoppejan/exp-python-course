@@ -9,7 +9,7 @@ class OurRidgeEstimator(BaseEstimator):
         
     def fit(self, X, y):
         M  = X.shape[0] 
-        X = np.c_[X, np.ones(M)]  
+        X = np.c_[np.ones(M),X]  
         XtX = X.T.dot(X)
         Xty = X.T.dot(y)
         allcoefs = np.linalg.inv(XtX + self.gamma*np.eye(M+1)).dot(Xty)
@@ -20,7 +20,7 @@ class OurRidgeEstimator(BaseEstimator):
     def predict(self, X):
         check_is_fitted(self)
         M  = X.shape[0] 
-        X = np.c_[X, np.ones(M)] 
-        allcoefs = np.append(self.coef_, self.intercept_)
+        X = np.c_[np.ones(M),X] 
+        allcoefs = np.append(self.intercept_,self.coef_)
         y_hat = np.dot(X, allcoefs)
         return y_hat   
